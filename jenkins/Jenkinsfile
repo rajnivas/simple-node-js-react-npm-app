@@ -15,6 +15,9 @@ pipeline {
             }
         }
         stage('Test') {
+            dokcer {
+                args '-u root:root'
+            }
             steps {
                 sh 'bash ./jenkins/scripts/test.sh'
             }
